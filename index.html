@@ -38,7 +38,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
+        z-index: -2;
         background: linear-gradient(
           135deg,
           #8b0000 0%,
@@ -63,36 +63,133 @@
         }
       }
 
-      /* Particle Animation */
-      .particles {
+      /* Star Animation */
+      #stars {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
         overflow: hidden;
+        pointer-events: none;
+        z-index: -1;
       }
 
-      .particle {
+      #stars span {
         position: absolute;
-        background: rgba(255, 255, 255, 0.1);
+        top: 50%;
+        left: 50%;
+        width: 4px;
+        height: 4px;
+        background-color: white;
         border-radius: 50%;
-        animation: float linear infinite;
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 
+                    0 0 0 8px rgba(255, 255, 255, 0.1), 
+                    0 0 20px rgba(255, 255, 255, 1);
+        animation: animate 3s linear infinite;
       }
 
-      @keyframes float {
+      #stars span::before {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 300px;
+        height: 1px;
+        background: linear-gradient(90deg, #ffffffa3, transparent);
+      }
+
+      @keyframes animate {
         0% {
-          transform: translateY(0) translateX(0);
-          opacity: 0;
+          transform: rotate(315deg) translateX(0);
+          opacity: 1;
         }
-        50% {
-          opacity: 0.5;
+        70% {
+          opacity: 1;
         }
         100% {
-          transform: translateY(-100vh) translateX(100px);
+          transform: rotate(315deg) translateX(-1000px);
           opacity: 0;
         }
+      }
+
+      #stars span:nth-child(1) {
+        top: 0;
+        right: 0;
+        animation-delay: 0s;
+        animation-duration: 1.9s;
+      }
+
+      #stars span:nth-child(2) {
+        top: 0;
+        right: 80px;
+        left: initial;
+        animation-delay: 0.2s;
+        animation-duration: 2s;
+      }
+
+      #stars span:nth-child(3) {
+        top: 80px;
+        right: 0;
+        left: initial;
+        animation-delay: 0.4s;
+        animation-duration: 3.4s;
+      }
+
+      #stars span:nth-child(4) {
+        top: 0;
+        right: 180px;
+        left: initial;
+        animation-delay: 0.6s;
+        animation-duration: 3s;
+      }
+
+      #stars span:nth-child(5) {
+        top: 0;
+        right: 400px;
+        left: initial;
+        animation-delay: 0.8s;
+        animation-duration: 6s;
+      }
+
+      #stars span:nth-child(6) {
+        top: 0;
+        right: 600px;
+        left: initial;
+        animation-delay: 1s;
+        animation-duration: 1.75s;
+      }
+
+      #stars span:nth-child(7) {
+        top: 300px;
+        right: 0;
+        left: initial;
+        animation-delay: 1.2s;
+        animation-duration: 5s;
+      }
+
+      #stars span:nth-child(8) {
+        top: 0;
+        right: 700px;
+        left: initial;
+        animation-delay: 1.4s;
+        animation-duration: 1s;
+      }
+
+      #stars span:nth-child(9) {
+        top: 0;
+        right: 1000px;
+        left: initial;
+        animation-delay: 0.75s;
+        animation-duration: 2s;
+      }
+
+      #stars span:nth-child(10) {
+        top: 0;
+        right: 450px;
+        left: initial;
+        animation-delay: 2.75s;
+        animation-duration: 4s;
       }
 
       .hero {
@@ -395,11 +492,23 @@
     <!-- Enhanced Moving Gradient Background -->
     <div class="gradient-bg"></div>
 
-    <!-- Particle Animation -->
-    <div class="particles" id="particles"></div>
+    <!-- Star Animation -->
+    <div id="stars">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        
       <div class="profile-card">
         <img src="pflio foto2.jfif" alt="Vivek Singh" class="profile-img" />
         <h1>Vivek Singh</h1>
@@ -572,38 +681,6 @@
     </footer>
 
     <script>
-      // Create particles for background
-      function createParticles() {
-        const particlesContainer = document.getElementById("particles");
-        const particleCount = 30;
-
-        for (let i = 0; i < particleCount; i++) {
-          const particle = document.createElement("div");
-          particle.classList.add("particle");
-
-          // Random size between 2px and 6px
-          const size = Math.random() * 4 + 2;
-          particle.style.width = `${size}px`;
-          particle.style.height = `${size}px`;
-
-          // Random position
-          particle.style.left = `${Math.random() * 100}%`;
-          particle.style.top = `${Math.random() * 100}%`;
-
-          // Random animation duration between 10s and 20s
-          const duration = Math.random() * 10 + 10;
-          particle.style.animationDuration = `${duration}s`;
-
-          // Random delay
-          particle.style.animationDelay = `${Math.random() * 5}s`;
-
-          particlesContainer.appendChild(particle);
-        }
-      }
-
-      // Initialize particles
-      createParticles();
-
       // Show sticky header when scrolled
       window.addEventListener("scroll", function () {
         const stickyHeader = document.getElementById("stickyHeader");
