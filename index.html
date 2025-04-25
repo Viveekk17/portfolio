@@ -26,21 +26,12 @@
         
         body {
             font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
             color: var(--dark);
             line-height: 1.8;
             font-size: 20px;
             overflow-x: hidden;
             position: relative;
-            min-height: 100vh;
-            background: linear-gradient(-45deg, #F8F5F2, #800020, #2C2C2C, #D4AF37);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
         
         /* Particle Background */
@@ -84,11 +75,11 @@
         .particle:nth-child(9) { width: 6px; height: 6px; left: 40%; animation-duration: 19s; animation-delay: 3.5s; }
         .particle:nth-child(10) { width: 3px; height: 3px; left: 70%; animation-duration: 11s; animation-delay: 2s; }
         
-        /* Content Container */
-        .content-container {
-            background-color: rgba(248, 245, 242, 0.85);
-            backdrop-filter: blur(5px);
-            min-height: 100vh;
+        /* Animated Gradient */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         /* Improved Typography */
@@ -118,7 +109,7 @@
         
         /* Header */
         header {
-            background: linear-gradient(135deg, rgba(128, 0, 32, 0.9), rgba(44, 44, 44, 0.9));
+            background: linear-gradient(135deg, #800020, #2C2C2C);
             background-size: 200% 200%;
             animation: gradientAnimation 10s ease infinite;
             color: white;
@@ -233,10 +224,6 @@
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         h2 {
@@ -499,7 +486,7 @@
         
         /* Footer */
         footer {
-            background: linear-gradient(135deg, rgba(128, 0, 32, 0.9), rgba(44, 44, 44, 0.9));
+            background: linear-gradient(135deg, #800020, #2C2C2C);
             background-size: 200% 200%;
             animation: gradientAnimation 10s ease infinite;
             color: white;
@@ -507,7 +494,6 @@
             padding: 4rem;
             margin-top: 4rem;
             font-size: 1.3rem;
-            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
         }
         
         footer p {
@@ -626,188 +612,185 @@
         <div class="particle"></div>
     </div>
 
-    <!-- Content Container -->
-    <div class="content-container">
-        <!-- Header -->
-        <header id="home">
-            <img src="pflio foto2.jpg" alt="Vivek Singh" class="profile-img">
-            <h1>Vivek Singh</h1>
-            <p class="tagline">AI & ML Specialist | Innovative Problem Solver | Future Technology Leader</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/vivek-singh-107544348/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://x.com/i_viveksingh__" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://github.com/Viveekk17" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-        </header>
+    <!-- Header -->
+    <header id="home">
+        <img src="pflio foto2.jpg" alt="Vivek Singh" class="profile-img">
+        <h1>Vivek Singh</h1>
+        <p class="tagline">AI & ML Specialist | Innovative Problem Solver | Future Technology Leader</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vivek-singh-107544348/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/i_viveksingh__" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/Viveekk17" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </header>
 
-        <!-- Navigation -->
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am Vivek Singh, a dedicated AI and Machine Learning specialist currently pursuing my BTech in Artificial Intelligence and Machine Learning at MIT Academy of Engineering. With a robust foundation in advanced mathematics and algorithmic problem-solving, I am committed to developing intelligent systems that address real-world challenges across industries.
-            </p>
-            <p>
-                My technical approach combines rigorous analytical methods with creative solution design, enabling me to architect innovative AI implementations. I maintain a particular focus on deep learning architectures, ethical AI development, and the practical deployment of machine learning models in business environments.
-            </p>
-        </section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am Vivek Singh, a dedicated AI and Machine Learning specialist currently pursuing my BTech in Artificial Intelligence and Machine Learning at MIT Academy of Engineering. With a robust foundation in advanced mathematics and algorithmic problem-solving, I am committed to developing intelligent systems that address real-world challenges across industries.
+        </p>
+        <p>
+            My technical approach combines rigorous analytical methods with creative solution design, enabling me to architect innovative AI implementations. I maintain a particular focus on deep learning architectures, ethical AI development, and the practical deployment of machine learning models in business environments.
+        </p>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Technical Expertise</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Core Programming</h3>
-                    <ul class="skill-list">
-                        <li>Python (Advanced Algorithms & OOP)</li>
-                        <li>C (System Programming)</li>
-                        <li>SQL (Database Design & Optimization)</li>
-                        <li>Web Technologies (HTML5, CSS3, JavaScript)</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Machine Learning</h3>
-                    <ul class="skill-list">
-                        <li>Supervised & Unsupervised Learning</li>
-                        <li>Deep Neural Networks</li>
-                        <li>Computer Vision (OpenCV, CNN)</li>
-                        <li>Natural Language Processing</li>
-                        <li>Reinforcement Learning</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Data Science</h3>
-                    <ul class="skill-list">
-                        <li>Exploratory Data Analysis</li>
-                        <li>Statistical Modeling</li>
-                        <li>Data Visualization (Matplotlib, Seaborn)</li>
-                        <li>Big Data Fundamentals</li>
-                        <li>Tableau & Power BI</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <ul class="skill-list">
-                        <li>TensorFlow & Keras</li>
-                        <li>PyTorch</li>
-                        <li>Scikit-learn</li>
-                        <li>Git Version Control</li>
-                        <li>Docker & Cloud Platforms</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Student Expense Tracker</h3>
-                        <p>Developed a comprehensive budget management application specifically designed for students to track expenses, set financial goals, and analyze spending patterns. Implemented predictive analytics to forecast future expenses based on historical data and machine learning algorithms to provide personalized savings recommendations.</p>
-                        <span class="project-tech">Technologies: Python, Flask, SQLite, Chart.js, Machine Learning</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Professional Portfolio Platform</h3>
-                        <p>Designed and developed a responsive, accessible portfolio website with performance optimization techniques. Implemented modern CSS features including Flexbox and Grid layout systems, with careful attention to typography hierarchy and visual design principles for optimal user experience.</p>
-                        <span class="project-tech">Technologies: HTML5, CSS3, Responsive Design, Accessibility Standards</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Academic Resource Exchange</h3>
-                        <p>Created a platform facilitating the exchange of academic resources among students, featuring intelligent matching algorithms, user reputation systems, and resource recommendation engines. The platform reduced textbook costs by an average of 60% for participating students while promoting sustainable educational practices.</p>
-                        <span class="project-tech">Technologies: Python, Django, PostgreSQL, Recommendation Algorithms</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Design Thinking Project Management</h3>
-                        <p>Developed a comprehensive digital platform for managing design thinking projects throughout their lifecycle. The system includes features for team collaboration, milestone tracking, peer review functionality, and presentation tools, significantly improving project outcomes for student teams.</p>
-                        <span class="project-tech">Technologies: Full Stack JavaScript, Firebase, Real-time Database</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certificates Section -->
-        <section id="certificates">
-            <h2>Professional Certificates</h2>
-            <div class="certificates-grid">
-                <div class="certificate-item">
-                    <h3>CISCO Networking Essentials</h3>
-                    <p>Completed comprehensive training in network architecture, protocols, and security fundamentals from CISCO Networking Academy.</p>
-                    <img src="certificate-placeholder1.jpg" alt="CISCO Certificate" class="certificate-img">
-                </div>
-                
-                <div class="certificate-item">
-                    <h3>NASSCOM Data Science Certification</h3>
-                    <p>Earned industry-recognized certification in data science fundamentals, including data analysis, visualization, and machine learning concepts.</p>
-                    <img src="certificate-placeholder2.jpg" alt="NASSCOM Certificate" class="certificate-img">
-                </div>
-                
-                <div class="certificate-item">
-                    <h3>Deep Learning Specialization</h3>
-                    <p>Completed advanced coursework in neural networks, deep learning architectures, and practical applications through Coursera.</p>
-                    <img src="certificate-placeholder3.jpg" alt="Deep Learning Certificate" class="certificate-img">
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-            <h2>Education & Credentials</h2>
-            <div class="education-item">
-                <h3>MIT Academy of Engineering, Pune</h3>
-                <p><strong>Bachelor of Technology in Artificial Intelligence & Machine Learning</strong></p>
-                <p>Current SGPA: 8.4 | Expected Graduation: 2028</p>
-                <p>Key coursework: Advanced Machine Learning, Neural Networks, Data Structures, Algorithms, Probability & Statistics, Database Systems</p>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Technical Expertise</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Core Programming</h3>
+                <ul class="skill-list">
+                    <li>Python (Advanced Algorithms & OOP)</li>
+                    <li>C (System Programming)</li>
+                    <li>SQL (Database Design & Optimization)</li>
+                    <li>Web Technologies (HTML5, CSS3, JavaScript)</li>
+                </ul>
             </div>
             
-            <div class="education-item">
-                <h3>Higher Secondary Education</h3>
-                <p><strong>Physics, Chemistry, Mathematics (PCM)</strong></p>
-                <p>MHT CET Score: 95.55%ile | Year of Completion: 2022</p>
-                <p>Specialized in advanced mathematics and computational problem-solving</p>
+            <div class="skill-category">
+                <h3>Machine Learning</h3>
+                <ul class="skill-list">
+                    <li>Supervised & Unsupervised Learning</li>
+                    <li>Deep Neural Networks</li>
+                    <li>Computer Vision (OpenCV, CNN)</li>
+                    <li>Natural Language Processing</li>
+                    <li>Reinforcement Learning</li>
+                </ul>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Professional Inquiry</h2>
-            <div class="contact-info">
-                <p>I welcome opportunities to discuss innovative projects, research collaborations, or professional positions in AI/ML development. Please feel free to reach out through any of the following channels:</p>
-                <p><strong>Email:</strong> <a href="mailto:viv017singh@gmail.com">viv017singh@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vivek-singh-107544348/" target="_blank">linkedin.com/in/vivek-singh</a></p>
-                <p><strong>GitHub Portfolio:</strong> <a href="https://github.com/Viveekk17" target="_blank">github.com/Viveekk17</a></p>
-                <p>Based in Pune, Maharashtra, India | Available for remote collaborations worldwide</p>
+            
+            <div class="skill-category">
+                <h3>Data Science</h3>
+                <ul class="skill-list">
+                    <li>Exploratory Data Analysis</li>
+                    <li>Statistical Modeling</li>
+                    <li>Data Visualization (Matplotlib, Seaborn)</li>
+                    <li>Big Data Fundamentals</li>
+                    <li>Tableau & Power BI</li>
+                </ul>
             </div>
-        </section>
+            
+            <div class="skill-category">
+                <h3>Tools & Platforms</h3>
+                <ul class="skill-list">
+                    <li>TensorFlow & Keras</li>
+                    <li>PyTorch</li>
+                    <li>Scikit-learn</li>
+                    <li>Git Version Control</li>
+                    <li>Docker & Cloud Platforms</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2025 Vivek Singh. All intellectual property rights reserved.</p>
-        </footer>
-    </div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Student Expense Tracker</h3>
+                    <p>Developed a comprehensive budget management application specifically designed for students to track expenses, set financial goals, and analyze spending patterns. Implemented predictive analytics to forecast future expenses based on historical data and machine learning algorithms to provide personalized savings recommendations.</p>
+                    <span class="project-tech">Technologies: Python, Flask, SQLite, Chart.js, Machine Learning</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Professional Portfolio Platform</h3>
+                    <p>Designed and developed a responsive, accessible portfolio website with performance optimization techniques. Implemented modern CSS features including Flexbox and Grid layout systems, with careful attention to typography hierarchy and visual design principles for optimal user experience.</p>
+                    <span class="project-tech">Technologies: HTML5, CSS3, Responsive Design, Accessibility Standards</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Academic Resource Exchange</h3>
+                    <p>Created a platform facilitating the exchange of academic resources among students, featuring intelligent matching algorithms, user reputation systems, and resource recommendation engines. The platform reduced textbook costs by an average of 60% for participating students while promoting sustainable educational practices.</p>
+                    <span class="project-tech">Technologies: Python, Django, PostgreSQL, Recommendation Algorithms</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Design Thinking Project Management</h3>
+                    <p>Developed a comprehensive digital platform for managing design thinking projects throughout their lifecycle. The system includes features for team collaboration, milestone tracking, peer review functionality, and presentation tools, significantly improving project outcomes for student teams.</p>
+                    <span class="project-tech">Technologies: Full Stack JavaScript, Firebase, Real-time Database</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <h2>Professional Certificates</h2>
+        <div class="certificates-grid">
+            <div class="certificate-item">
+                <h3>CISCO Networking Essentials</h3>
+                <p>Completed comprehensive training in network architecture, protocols, and security fundamentals from CISCO Networking Academy.</p>
+                <img src="certificate-placeholder1.jpg" alt="CISCO Certificate" class="certificate-img">
+            </div>
+            
+            <div class="certificate-item">
+                <h3>NASSCOM Data Science Certification</h3>
+                <p>Earned industry-recognized certification in data science fundamentals, including data analysis, visualization, and machine learning concepts.</p>
+                <img src="certificate-placeholder2.jpg" alt="NASSCOM Certificate" class="certificate-img">
+            </div>
+            
+            <div class="certificate-item">
+                <h3>Deep Learning Specialization</h3>
+                <p>Completed advanced coursework in neural networks, deep learning architectures, and practical applications through Coursera.</p>
+                <img src="certificate-placeholder3.jpg" alt="Deep Learning Certificate" class="certificate-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education & Credentials</h2>
+        <div class="education-item">
+            <h3>MIT Academy of Engineering, Pune</h3>
+            <p><strong>Bachelor of Technology in Artificial Intelligence & Machine Learning</strong></p>
+            <p>Current SGPA: 8.4 | Expected Graduation: 2028</p>
+            <p>Key coursework: Advanced Machine Learning, Neural Networks, Data Structures, Algorithms, Probability & Statistics, Database Systems</p>
+        </div>
+        
+        <div class="education-item">
+            <h3>Higher Secondary Education</h3>
+            <p><strong>Physics, Chemistry, Mathematics (PCM)</strong></p>
+            <p>MHT CET Score: 95.55%ile | Year of Completion: 2022</p>
+            <p>Specialized in advanced mathematics and computational problem-solving</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Professional Inquiry</h2>
+        <div class="contact-info">
+            <p>I welcome opportunities to discuss innovative projects, research collaborations, or professional positions in AI/ML development. Please feel free to reach out through any of the following channels:</p>
+            <p><strong>Email:</strong> <a href="mailto:viv017singh@gmail.com">viv017singh@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vivek-singh-107544348/" target="_blank">linkedin.com/in/vivek-singh</a></p>
+            <p><strong>GitHub Portfolio:</strong> <a href="https://github.com/Viveekk17" target="_blank">github.com/Viveekk17</a></p>
+            <p>Based in Pune, Maharashtra, India | Available for remote collaborations worldwide</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Vivek Singh. All intellectual property rights reserved.</p>
+    </footer>
 </body>
 </html>
